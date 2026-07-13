@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🎯 Habit Tracker</h1>
+            <p>Build better habits, one day at a time</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Add New Habit Section -->
+            <section class="add-habit-section">
+                <h2>Add a New Habit</h2>
+                <form id="addHabitForm">
+                    <div class="form-group">
+                        <label for="habitName">Habit Name *</label>
+                        <input type="text" id="habitName" placeholder="e.g., Morning Exercise" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitDescription">Description</label>
+                        <textarea id="habitDescription" placeholder="What's this habit about?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitCategory">Category *</label>
+                        <select id="habitCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="health">Health</option>
+                            <option value="learning">Learning</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="mindfulness">Mindfulness</option>
+                            <option value="social">Social</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Habit</button>
+                </form>
+            </section>
+
+            <!-- Habits List Section -->
+            <section class="habits-section">
+                <h2>My Habits</h2>
+                <div id="habitsList" class="habits-list">
+                    <p class="empty-state">No habits yet. Add one to get started! 🚀</p>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Habits</h3>
+                        <p id="totalHabits" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completed Today</h3>
+                        <p id="completedToday" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Current Streak (Best)</h3>
+                        <p id="bestStreak" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completion Rate</h3>
+                        <p id="completionRate" class="stat-number">0%</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Habit Details (we'll use this later) -->
+    <div id="habitModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
